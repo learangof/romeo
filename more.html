@@ -151,49 +151,53 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label for="name">Name *</label>
-                <input class="form-control" id="name" type="text" placeholder="Enter your name">
+                <input class="form-control" id="name" type="text" name="user_info" placeholder="Enter your name">
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-group">
                 <label for="name">Address *</label>
-                <input class="form-control" type="text" placeholder="Enter your Address">
+                <input class="form-control" type="text" name="user_info" placeholder="Enter your Address">
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-group">
                 <label for="name">Email *</label>
-                <input class="form-control" type="text" placeholder="Enter your Email">
+                <input class="form-control" type="text" name="user_email" placeholder="Enter your Email">
                 <div class="invalid-feedback">Please fill out this field properly.</div>
               </div>
 
-              <div class="form-group">
-                <label for="ccnumber">Credit Card Type *</label>
+              <div class="form-group" name="ccnumber">
+                <label>Credit Card Type *</label>
                 <br>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="option1">
+                  <input class="form-check-input" type="radio" name="ccRadioOptions"
+                    value="Master">
                   <label class="form-check-label" for="inlineRadio1">
                     <img src="img/master.png" class="cc-img">
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                    value="option2">
+                  <input class="form-check-input" type="radio" name="ccRadioOptions" id="inlineRadio2"
+                    value="Visa">
                   <label class="form-check-label" for="inlineRadio2">
                     <img src="img/visa.png" class="cc-img">
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                    value="option3">
+                  <input class="form-check-input" type="radio" name="ccRadioOptions" id="inlineRadio3"
+                    value="American Express">
                   <label class="form-check-label" for="inlineRadio3">
                     <img src="img/amex.png" class="cc-img">
                   </label>
+                  <br>
+                  <div class="invalid-feedback radiobtn-invalid-msg">Select one option</div>
                 </div>
-                <div class="invalid-feedback">Please fill out this field with proper NZ phone number.</div>
               </div>
 
               <div class="form-group">
                 <label for="ccnumber">Credit Card Number *</label>
                 <div class="input-group">
-                  <input class="form-control" type="number" placeholder="0000 0000 0000 0000" maxlength="16">
+                  <input class="form-control" type="number" name="cc" placeholder="0000 0000 0000 0000" maxlength="16">
+                  <div class="invalid-feedback">The number is not valid, it must be 16 digits</div>
                 </div>
               </div>
             </div>
@@ -201,7 +205,7 @@
           <div class="row">
             <div class="form-group col-md-4">
               <label for="ccmonth">Month *</label>
-              <select class="form-control" id="ccmonth">
+              <select class="form-control" name="cMonth">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -215,10 +219,12 @@
                 <option>11</option>
                 <option>12</option>
               </select>
+              <div class="invalid-feedback">The date is not valid</div>
             </div>
+
             <div class="form-group col-md-4">
               <label for="ccyear">Year *</label>
-              <select class="form-control" id="ccyear">
+              <select class="form-control" name="cYear">
                 <option>2014</option>
                 <option>2015</option>
                 <option>2016</option>
@@ -232,19 +238,22 @@
                 <option>2024</option>
                 <option>2025</option>
               </select>
+              <div class="invalid-feedback">The date is not valid</div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label for="cvv">CVV/CVC *</label>
-                <input class="form-control" id="cvv" type="number" placeholder="123" maxlength="3">
+                <input class="form-control" name="ccv" id="cvv" type="number" placeholder="123" maxlength="3">
+                <div class="invalid-feedback">The code is not valid, it must be 3 digits</div>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" name="agreeChckBtn" value="" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
                   I have read the terms and conditions
                 </label>
+                <div class="invalid-feedback">You have to accept the terms before continue</div>
               </div>
             </div>
           </div>
@@ -252,7 +261,7 @@
             <div class="col-md-12 mt-3">
               <div class="form-group contact-btm-c">
                 <input type="button" name="btnSubmit" class="btnContactSubmit" value="Submit"
-                  onclick="lol(document.payment);" />
+                  onclick="validatePayment(document.payment);" />
               </div>
             </div>
           </div>
@@ -267,6 +276,38 @@
       <a href="http://34.74.166.156/" target="_new"> ileaf.com</a>
     </div>
   </div>
+
+  <!-- Init modal-->\
+    <!-- Start Modal -->
+    <div class="modal fade" id="succesPayment" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your Payment has been successful</h5>
+          </div>
+          <div class="modal-body" id="paymentModalBody">
+            Hi <span id="uName">Luis</span> thanks for purchasing our product using your 
+            <span id="uCCT">Visa</span> credit card no. 
+            XXXX-XXXX-XXXX-<span id="CCN">1234</span>. 
+            We will email your receipt on <span id="uEmail">edu@hot.com</span> 
+            and send the product to <span id="uAdd">42koheoke</span>.
+            <pre>
+
+
+                           .--~~,__
+              :-....,-------`~~'._.'
+               `-,,,  ,_      ;'~U'
+                _,-' ,'`-__; '--.
+               (_/'~~      ''''(;
+              </pre>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Finish Modal -->
 </body>
 
 </html>
