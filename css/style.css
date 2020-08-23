@@ -1,0 +1,268 @@
+body{
+    background: url(../img/bk.png);
+    background-repeat: repeat;
+    color: #302066;
+}
+.cc-img{
+    max-width: 50px;
+}
+img.img-fluid{
+    max-width: 90%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
+}
+pre{
+    margin-top: -30px;
+    margin-bottom: -30px;
+}
+textarea.form-control {
+    width: 100%; 
+    height: 200px;
+}
+.bg-plain{
+    background: #CFF6FE;
+}
+h1,h4,h5{
+    color: #3F5A99;
+}
+a{
+    color: #FFC89C;
+}
+a:hover{
+    color:#E8FBFF;
+}
+.bg-color{
+    background-color: #B38D6D;
+}
+.navbar-dark .navbar-nav .nav-link{
+    margin-right: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #E8FBFF;
+    border-radius: 15px;
+    background-color: #BFAC9B;
+}
+.navbar-dark .navbar-nav .nav-link.active{
+    background-color: #927359;
+    border-radius: 15px;
+    color: #FFC89C;
+    
+}
+.contact-btm-l{
+    text-align: left;
+}
+.contact-btm-r{
+    text-align: right;
+}
+.contact-btm-c{
+    text-align: center;
+}
+.foot-fix{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: white;
+}
+
+.menu{
+    margin-top: -5px;
+}
+
+.jumbo-header{
+    margin-bottom: 0;
+    background-color: white;
+    padding: 20;
+    border-radius: 0;
+}
+.jumbo-header div.col-lg-5 {
+    margin: auto;
+    padding-left: 5;
+    margin-left: 0px;
+}
+.jumbo-header p{
+   margin-bottom: 0;
+}
+
+.nav{
+    margin-top: 0;
+}
+
+.containt{
+    margin-top: -5px;
+    padding: 20px 20px 5px 30px;
+    background-color: white;
+    border-radius: 0px 30px 30px 30px;
+    text-align: justify;
+}
+.containt-tag{
+    margin-top: -5px;
+    padding: 20px 20px 5px 30px;
+    background-color: white;
+    border-radius: 30px 30px 30px 30px;
+    text-align: justify;
+}
+.tag{
+    background-color: white;
+    border-radius: 30px 30px 0px 0px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 10px 0px 0px 30px;
+    /*padding-left: 30px;
+    padding-top: 10px;*/
+}
+
+.video{
+    padding:30px;
+}
+
+span.nav-tex{
+    font-size: 0;
+}
+.nav-icon{
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    pointer-events: none;        
+    text-decoration: none;
+    color: grey;
+}  
+
+/*------*/
+.contact-form{
+    padding:0;
+}
+.contact-form .form-control{
+    border-radius:1rem;
+}
+
+.contact-form h5{
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #1298B3;
+}
+/*.contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #dc3545;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}*/
+
+.btnContactSubmit
+{
+    width: 150px;
+    border-radius: 1rem;
+    padding: 5px;
+    color: #fff;
+    background-color: #1298B3;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/*------*/
+.nav-pills .nav-link{
+    padding: 20px 40px 20px 40px;
+    color: #1298B3;
+}
+.nav-pills .nav-link:hover{
+    padding: 20px 40px 20px 40px;
+    border-radius: 30px 30px 0px 0px;
+    color: #E8FBFF;
+
+background-color: #BFAC9B;
+}
+
+@keyframes tab-animation {
+    from {background-color: #1298b300;}
+    to {background-color: #1298b3;}
+  }
+.nav-pills .nav-link.active{
+    background-color: #1298b3;
+    animation-name: tab-animation;
+    animation-duration: 0.5s;
+    border-radius: 30px 30px 0px 0px;
+}
+.tab{
+    display: flex;
+    margin: auto;
+    width: auto;
+    margin-bottom: -5px;
+}
+ul.tag{
+    padding: 0px;
+}
+
+
+/*.nav-pills{
+    background-color: #927359;
+}*/
+
+
+@media screen and (max-width: 766px) {
+ 
+    .nav-pills .nav-link{
+        padding: 10px 20px 10px 20px;
+    }
+    .nav-pills .nav-link:hover{
+        padding: 10px 20px 10px 20px;
+    }
+    span.nav-tex{
+        margin-left: 5px;
+        font-size: 1rem;
+    }
+    .containt{
+        border-radius: 0px 0px 30px 30px;
+        text-align: center;
+        padding:20px;
+    }
+    .containt-tag{
+        border-radius: 30px 30px 30px 30px;
+        text-align: center;
+        padding:20px;
+    }
+    .tag{
+        text-align: center;
+        padding:10px;
+        padding-bottom: 0px;
+    }
+    .contact-btm-l{
+        text-align: center;
+    }
+    .contact-btm-r{
+        text-align: center;
+    }
+    .contact-form h5{
+        text-align: center;
+    }
+    .navbar-collapse{
+        text-align: center;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        margin-top: 5px;
+    }
+    .text-truncate{
+        max-width: 90px;
+    }
+
+}
+@media screen and (max-width: 992px) {
+
+    .jumbo-header{
+        text-align: center;
+    }
+    .containt-tag{
+        border-radius: 30px 30px 30px 30px;
+        text-align: center;
+        padding:20px;
+    }
+
+}
+
+
