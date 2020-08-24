@@ -13,7 +13,7 @@ function checkWithRegularExpression(txt, expression) {
 }
 
 function checkPhoneNumber(txt) {
-  var phone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  var phone = /^\(?([0]{1})\)?[-. ]?([2]{1})?[-. ]?([0-9]{1})?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
   return checkWithRegularExpression(txt, phone);
 }
 function checkCCV(txt) {
