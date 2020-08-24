@@ -14,7 +14,7 @@ function checkWithRegularExpression(txt, expression) {
 
 function checkPhoneNumber(txt) {
   var phone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    return checkWithRegularExpression(txt, phone);
+  return checkWithRegularExpression(txt, phone);
 }
 function checkCCV(txt) {
   var ccv = /^[0-9]{3}$/;
@@ -74,6 +74,8 @@ function sendForm(form,modalName) {
 }
 function resetForm(form) {
   for (var i = 0; i < form.length; i++) {
+    form[i].classList.remove("is-invalid");
+    form[i].classList.remove("is-valid");
     if (
       !(form[i].type === "button") &&
       !(form[i].type === "submit") &&
@@ -83,23 +85,15 @@ function resetForm(form) {
       !(form[i].type === "checkbox")
     ) {
       form[i].value = "";
-      form[i].classList.remove("is-invalid");
-      form[i].classList.remove("is-valid");
     }
     if ((form[i].type === "checkbox")) {
       form[i].checked = false;
-      form[i].classList.remove("is-invalid");
-      form[i].classList.remove("is-valid");
     }
     if ((form[i].type === "radio")) {
       form[i].checked = false;
-      form[i].classList.remove("is-invalid");
-      form[i].classList.remove("is-valid");
     }
     if((form[i].type === "select-one")){
       form[i].selectedIndex = 0;
-      form[i].classList.remove("is-invalid");
-      form[i].classList.remove("is-valid");
     }
   }
 }
