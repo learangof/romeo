@@ -21,8 +21,8 @@ function checkCCV(txt) {
   return checkWithRegularExpression(txt, ccv);
 }
 function checkCC(txt) {
-  var ccv = /^\(?([0-9]{4})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})?[-. ]?([0-9]{4})$/;
-  return checkWithRegularExpression(txt, ccv);
+  var cc = /^[0-9]{16}$/;
+  return checkWithRegularExpression(txt, cc);
 }
 function checkEmail(txt) {
   var email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
